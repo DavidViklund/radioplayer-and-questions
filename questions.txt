@@ -1,0 +1,123 @@
+
+    /////////////////// D E L 1 ////////////////////
+
+1. Vad är OWASP och vilket är dess primära uppdrag enligt artikeln?
+
+    OWASP står för "Open Web Application Security Project". 
+    Den finns till för att förbättra säkerheten för webbapplikationer genom 
+    att förse med resurser, verktyg och riktlinjer för att identifiera och
+    förhindra sårbarheter i webbapplikationer.
+
+2. Förklara begreppet "Injection". Ge ett exempel på hur en injectionsattack kan kompromettera 
+   en webbapplikations säkerhet.
+
+    "Injection" är en sårbarhet där skadlig kod (vanligtvis genom att infoga oönskade 
+    kommandon eller script) läggs till i en applikations dataförfrågningar. 
+    Ett vanligt exempel är "SQL Injection" (SQL = structured query language) där en 
+    angripare infogar SQL-kod i ett formulärfält på en webbsida för att få tillgång 
+    till databasen och utför skadlig kod.
+
+3. Förklara två strategier för att förhindra sårbarheter i "Broken Authentication".
+    a. Använd starka autentiseringsmetoder som t.ex. multifaktorautentisering.
+    b. Implementera en noggrann sessionhantering med rätt inloggningstidsgränser, 
+    återställningsåtgärder vid lösenordsåterställning och säker hantering av sessionsdata.
+
+4. Beskriv de potentiella konsekvenserna av "Insecure Deserialization" på webb. 
+Hur kan utvecklare skydda sig mot sådana attacker?
+
+    "Insecure deserialization" är en sårbarhet där data som omvandlats till ett 
+    annat format kan leda till exekvering av skadlig kod om inte hanteras säkert.
+
+    Insecure Deserialization kan leda till attacker där skadlig kod injiceras 
+    och utförs när serialiserad data behandlas. 
+    Detta kan leda till allt från fjärrkörning av skadlig kod till förändringar av applikationslogik. 
+    För att skydda sig bör utvecklare använda validering av serialiserad data, 
+    begränsad exekveringsbehörighet och kryptering av data.
+
+5. Definiera kortfattat Cross-Site Scripting (XSS) enligt artikeln och lista två metoder
+som föreslås för att förhindra XSS-attacker i webbapplikationer.
+
+    XSS är skadlig kod som injiceras i webbsidor och utförs i användares webbläsare. 
+    a) För att förhindra detta kan utvecklare använda "inputvalidering"( en granskning/kontroll över information 
+    som användaren skriver in tex att ett telefonnummer har rätt format eller att en epostadress är giltig).
+    
+    b)Ett annat exempel är "escape-kodning"(escaping untrusterd HTTP requests) för att rensa data från skadlig kod.
+    Escape-kodning innebär att använda speciella symboler eller tecken före andra tecken för att förhindra
+    att de misstolkas av ett program eller en kod. Det hjälper att säkerställa att tecknen används i sitt 
+    bokstavliga syfte iställer för att tolkas som en del av en kod.
+
+
+
+
+    /////////////////// D E L 2 ////////////////////
+
+1. Förklara vikten av semantiska element i webbutveckling enligt tillgänglighetsriktlinjer. 
+Ge exempel på minst två semantiska HTML-element och förklara hur de förbättrar tillgängligheten 
+för användare med funktionsnedsättningar.
+
+        Vikten av semantiska element är stor då den ger innebörd och struktur på hemsidor.
+        En webutvecklarekan göra hemsidan mer läsbar och meningsfull om man använder vissa element.
+        Exempel på semantiska html element:
+        <nav>
+        <section>
+        <article>
+        <footer>
+        <button>
+
+        Om man har funktionsnedsättningar och tex en screenreader hjälper den att läsa av sidan på ett korrekt sätt
+
+
+2. Beskriv betydelsen av färgkontrast i webbdesign med avseende på tillgänglighet. Hur gynnar att följa 
+färgkontrastriktlinjer användare med synnedsättningar, och vilka rekommenderade kontrastförhållanden 
+finns enligt WCAG-standarder?
+
+
+    Färgkontrast är av stor betydelse för tillgänglighet eftersom det underlättar för användare med synnedsättningar
+    att läsa och förstå innehållet på webbsidor. Att följa färgkontrastriktlinjer enligt WCAG-standarder 
+    säkerställer att text och bakgrund har tillräcklig kontrast för att vara läsbar för personer med synnedsättningar. 
+    Enligt WCAG-standarderna rekommenderas ett kontrastförhållande på minst 4.5:1 (texten är ljusare än bakgrunden 
+    vilket är toppen) för normal text och 3:1 för större text (14 punkter eller mer).
+
+3. Diskutera betydelsen av alternativ text (alt-text) för bilder enligt tillgänglighetsriktlinjer.
+Varför är det avgörande att inkludera beskrivande alt-text och hur bidrar detta till att göra webbinnehåll mer tillgängligt? 
+Ge exempel för att illustrera din förklaring.
+
+    Alternativ text för bilder är viktigt för att tillhandahålla beskrivande information om bilder till användare som 
+    använder skärmläsare eller för dem som har avaktiverat bilder i webbläsaren. 
+    Genom att inkludera beskrivande alt-text kan personer med synnedsättningar förstå innebörden av bilden. 
+    Tex, om det är en bild på en hund, kan alt text vara; 
+    “En glad yorkshire-terrier som leker på gräsmattan”.
+
+4. Förklara syftet med "landmarks",landmärken,för att skapa tillgängligt webbinnehåll.
+Hur hjälper landmärken till i navigation för användare av hjälpmedel, och kan du ge exempel på vanligt använda 
+landmärkeselement i HTML?
+
+    Landmärken är HTML-element som definierar olika delar av webbsidan, exempelvis;
+    <header>
+    <main>
+    <nav>
+    <footer>
+
+    Dessa landmärken hjälper användare med hjälpmedel, som tex skärmläsare, 
+    att navigera och förstå sidans struktur. Genom att markera delar
+    som “header” och “footer” kan användare lättare hoppa mellan olika sektioner av sidan.
+
+5. Beskriv betydelsen av korrekt etikettering av formulär. Varför är det viktigt att märka formulärelement,
+och vilka strategier kan utvecklare använda för att säkerställa effektiv etikettering för förbättrad tillgänglighet?
+
+    Korrekt märkning av formulärfält är viktigt för att användare ska förstå vad varje fält betyder och vad de förväntas göra. 
+    Om fälten inte är tydligt märkta kan användare, inklusive de med funktionsnedsättningar, 
+    ha svårt att veta vilken information de ska lägga in.
+    Utvecklare kan använda HTML-taggen <label> för att tydligt namnge varje fält så att det blir lättare för alla att förstå.
+
+    Till exempel: <label for= username">Användarnamn:</label>
+                    <input type="text" id="username" name="username">
+
+    Labeln anger alltså Användarnamn för tydlighet.
+
+    De kan också använda ARIA-attribut för att ge extra information till användare som använder skärmläsare. 
+    Detta hjälper till att göra formulären enklare att använda för alla.
+
+    ARIA-attribut är bra att använda då det till exempel finns en knapp som leder vidare till en annan sida.
+
+    Till exempel: <button aria-label="Gå till startsidan">Start</button>
